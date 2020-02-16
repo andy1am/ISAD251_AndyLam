@@ -25,7 +25,7 @@ Guest Account
 
 ### Application Factsheet
 #### The Application
-This application is designed to be a minimum viable product for a system that allows a customer of a pub to order drinks or snacks from the pub's website. Customers can view and add different types of products for sale to their order. The types of products include Alcoholic Beverages, Soft Drinks and Bar Snacks. The application also allows admins (owners of the pub) to add, view, edit or withdraw products that they sell. Admins are also able to view any past customer orders by either entering a Customer ID or viewing ALL past orders. These are the top 5 functions/features of the application:
+This application is designed to be a minimum viable product for a system that allows a customer of a pub to order drinks or snacks from the pub's website. Customers can view and add different types of products for sale to their order. The types of products include Alcoholic Drinks, Cocktails, Food and Snacks. The application also allows admins (owners of the pub) to add, view, edit or withdraw products that they sell. Admins are also able to view any past customer orders by either entering a Customer ID or viewing ALL past orders. These are the top 5 functions/features of the application:
 * Customers can add multiple different types of products to their order basket to order.
 * Customers can remove any products they no longer wish to order from their basket.
 * Admins can add new products to be sold.
