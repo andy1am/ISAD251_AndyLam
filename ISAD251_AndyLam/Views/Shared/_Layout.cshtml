@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ISAD251_AndyLam</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="/Content/card.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="background-color:#a9a9a9;">
+
+    <div class="bs-component">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("ISAD251_AndyLam", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Area <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Orders", "Index", "Orders")</li>
+                                <li>@Html.ActionLink("Catagorie", "Index", "Catagories")</li>
+                                <li>@Html.ActionLink("Analytics", "Index", "Analytics")</li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Roles Admin</li>
+                                <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
+                                <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                            </ul>
+                        </li>
+                    }
+                    <li>@Html.ActionLink("Drink/ Food", "Index", "Items")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About us <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                            <li class="divider"></li>
+                            <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                @Html.Partial("_LoginPartial")
+
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-push-6 item text">
+                        <h3>Opening hour</h3>
+                        <p>
+                            Monday to Saturday - 5pm to 1am / Sunday - Closed <br />
+                            Last order is 30 minutes before closing
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-md-pull-6 col-sm-4 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li onclick="location.href = '@Url.Action("Index", "Items")'"><a href="#">Drink/ Food</a></li>
+                            <li onclick="location.href = '@Url.Action("About", "Home")'"><a href="#">About</a></li>
+                            <li onclick="location.href = '@Url.Action("Contact", "Home")'"><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <iframe allowfullscreen frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDA-ztdwhmlcALCo7bCC6CFISl-NKNt7IE&amp;q=Hong+Kong&amp;zoom=11&amp;maptype=satellite" width="100%" height="400"></iframe>
+            <p>&copy; @DateTime.Now.Year - ISAD251_AndyLam</p>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fbootstrapstudio.io%2F&amp;layout=standard&amp;action=like&amp;size=small" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media" width="450" height="80"></iframe>
+        </footer>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
